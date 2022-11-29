@@ -1,0 +1,10 @@
+node_modules
+coverage
+.env
+.vscode
+dist
+build
+.npmrc
+yarn-error.log*
+.idea*
+yarn.lock
