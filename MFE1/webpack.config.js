@@ -10,6 +10,13 @@ module.exports = {
   output: {
     path:path.resolve(__dirname, "dist"),
   },
+  devServer: {
+    historyApiFallback: true,
+    open: false,
+    compress: true,
+    port: 8080,
+    hot: true,
+  },
   module: {
     rules: [
       {
@@ -28,7 +35,16 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "accepter",
       remotes: {
-        container: "container@http://localhost:8082/remoteEntry.js",
+        container: "container@http://localhost:8083/remoteEntry.js",
+      },
+      shared: {
+        ...deps,
+        react: { singleton: true, eager: true, requiredVersion: deps.react },
+        "react-dom": {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps["react-dom"],
+        },
       },
     }),  
     new HtmlWebpackPlugin({

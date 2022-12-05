@@ -10,6 +10,13 @@ module.exports = {
   output: {
     path:path.resolve(__dirname, "dist"),
   },
+  devServer: {
+    historyApiFallback: true,
+    open: false,
+    compress: true,
+    port: 8083,
+    hot: true,
+  },
   module: {
     rules: [
       {
