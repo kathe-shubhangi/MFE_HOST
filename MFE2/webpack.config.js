@@ -20,7 +20,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -30,8 +30,8 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ]
   },
@@ -56,4 +56,9 @@ module.exports = {
       template: path.join(__dirname, "src", "index.html"),
     }),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx', '.less', 'css', 'scss', 'sass', 'cur'],
+    unsafeCache: false,
+    symlinks: false,
+  },
 }
