@@ -1,8 +1,41 @@
 .userContainer {
-    background-color: pink;
+  background-color: rgb(220 220 220);
 }
-
+.card-wrapper {
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
 .userInfo {
-    display: flex;
-    margin-bottom: 10px;
+  padding: 5px 0;
+  margin: 5px;
+  text-align: center;
+  width: 200px;
+  background: white;
+  border: none;
+  border-radius: 8px;
+}
+.userInfo label {
+  color: rgb(44, 43, 43);
+}
+.userInfo label.user-name {
+  color: red;
+  font-size: large;
+}
+.edit-del-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+button.edit-btn,
+button.del-btn {
+  background: blue;
+  border: none;
+  color: white;
+  font-weight: 600;
+  width: 100px;
+  cursor: pointer;
+}
+button.del-btn {
+  background: red;
 }
